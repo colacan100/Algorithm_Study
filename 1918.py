@@ -1,24 +1,25 @@
 from sys import stdin
 sic = stdin.readline().rstrip()
-stack_alpha = list()
 stack = list()
+ans = ''
 for j in sic:
     if j.isupper():
-        stack_alpha.append(j)
+        ans+=j
     else:
         if j == '(':
-            stack_alpha.append(j)
-        elif j=='*' or j=='/':
+            stack.append(j)
+        elif j=='*' or j=='/': # 우선순위가 낮은 +,- 출력
             while stack and (stack[-1]=='*' or stack[-1]=='/'):
-                stack_alpha.append(stack.pop())
-            stack_alpha.append(j)
-        elif j=='+' or j=='-':
+                ans += stack.pop()
+            stack.append(j)
+        elif j=='+' or j=='-': # ( 나올때까지 출력
             while stack and stack[-1] != '(':
-                stack_alpha.append(stack.pop())
-            stack_alpha.append(j)
-        elif j == ')':
+                ans += stack.pop()
+            stack.append(j)
+        elif j == ')': # ( 나올때까지 출력
             while stack and stack[-1] !='(':
-                stack_alpha.append(stack.pop())
-            stack_alpha.append(j)
-### 하던거 나중에 마무리
-
+                ans += stack.pop()
+            stack.pop()
+while stack:
+    ans += stack.pop()
+print(ans)

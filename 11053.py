@@ -1,5 +1,4 @@
 # dp문제의 대표문제라고 한다. 아직도 헤매는 중
-# 다이나믹 프로그래밍 강의를 좀 찾아볼 생각
 import sys
 size = int(sys.stdin.readline())
 A = list(map(int,sys.stdin.readline().split()))

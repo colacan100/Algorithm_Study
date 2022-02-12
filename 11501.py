@@ -1,4 +1,4 @@
-'''파이썬
+'''시간초과
 import sys
 T = int(sys.stdin.readline())
 for _ in range(T):

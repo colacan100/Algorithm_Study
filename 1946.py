@@ -13,7 +13,7 @@ for _ in range(T):
             count += 1
             del apply[0]
         else:
-            del apply[0]dd
+            del apply[0]
 
     print(count)
 '''

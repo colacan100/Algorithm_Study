@@ -4,7 +4,7 @@ com = int(sys.stdin.readline())
 ssang = int(sys.stdin.readline())
 graph = [[]*com for _ in range(com+1)]
 for _ in range(ssang):
-    a,b = map(int,input().split())
+    a,b = map(int,sys.stdin.readline().split())
     graph[a].append(b)
     graph[b].append(a)
 cnt = 0
